@@ -3,7 +3,7 @@
 The CLI for the open agent skills ecosystem.
 
 <!-- agent-list:start -->
-Supports **Opencode**, **Claude Code**, **Codex**, **Cursor**, and [24 more](#available-agents).
+Supports **Opencode**, **Claude Code**, **Codex**, **Cursor**, and [25 more](#available-agents).
 <!-- agent-list:end -->
 
 
