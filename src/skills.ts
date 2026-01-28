@@ -176,3 +176,18 @@ export async function discoverSkills(
 export function getSkillDisplayName(skill: Skill): string {
   return skill.name || basename(skill.path);
 }
+
+/**
+ * Filter skills based on user input (case-insensitive direct matching).
+ * Multi-word skill names must be quoted on the command line.
+ */
+export function filterSkills(skills: Skill[], inputNames: string[]): Skill[] {
+  const normalizedInputs = inputNames.map((n) => n.toLowerCase());
+
+  return skills.filter((skill) => {
+    const name = skill.name.toLowerCase();
+    const displayName = getSkillDisplayName(skill).toLowerCase();
+
+    return normalizedInputs.some((input) => input === name || input === displayName);
+  });
+}
